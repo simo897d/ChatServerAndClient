@@ -30,7 +30,12 @@ namespace ChatClient
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+
              clientSocket.Connect("localhost", 12345);
+            }
+            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
